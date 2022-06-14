@@ -571,6 +571,15 @@ bot.on('message', async event => {
       }
     )
   }
+  if (msg === '菜單') {
+    event.reply(
+      {
+        "type": "image",
+        "originalContentUrl": "https://pic.pimg.tw/pokerlife/1577256102-2369965690_wn.jpg",
+        "previewImageUrl": "https://pic.pimg.tw/pokerlife/1577256102-2369965690_wn.jpg"
+      }
+    )
+  }
 
 })
 // 程式碼寫在上方
