@@ -39,6 +39,15 @@ bot.on('follow', async event => {
 bot.on('message', async event => {
   const msg = event.message.text
 
+  if (msg === '最新消息') {
+    event.reply(
+      {
+        type: "text",
+        text: "最新推出夏季特調High Ball！\n紅心芭樂、芒果、金桔檸檬和冬瓜茶等多種口味！\n快把握下夏天的時光，來銀角酒場品嚐好吃的日式章魚燒及好喝的酒類飲品吧！"
+      }
+    )
+  }
+
 })
 // 程式碼寫在上方
 
