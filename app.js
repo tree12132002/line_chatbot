@@ -47,6 +47,17 @@ bot.on('message', async event => {
       }
     )
   }
+  if (msg === '店面位置') {
+    event.reply(
+      {
+        type: "location",
+        title: "銀角酒場",
+        address: "台北市中山區林森北路121之1號",
+        latitude: 25.05093275637032,
+        longitude: 121.52519986814322
+      }
+    )
+  }
 
 })
 // 程式碼寫在上方
