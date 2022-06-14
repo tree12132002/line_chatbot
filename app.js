@@ -58,6 +58,101 @@ bot.on('message', async event => {
       }
     )
   }
+  if (msg === '線上訂位') {
+    event.reply(
+      {
+        type: "flex",
+        altText: "this is a flex message",
+        contents:
+        {
+          type: "bubble",
+          size: "kilo",
+          hero: {
+            type: "image",
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKUukvT3xmkGHs3rXYXugZXekOfjnRgZn-8g&usqp=CAU",
+            size: "full",
+            aspectRatio: "20:13",
+            aspectMode: "cover"
+          },
+          body: {
+            type: "box",
+            layout: "vertical",
+            contents: [
+              {
+                type: "text",
+                text: "預約訂位",
+                weight: "bold",
+                size: "md"
+              },
+              {
+                type: "box",
+                layout: "vertical",
+                margin: "lg",
+                spacing: "sm",
+                contents: [
+                  {
+                    type: "box",
+                    layout: "baseline",
+                    spacing: "sm",
+                    contents: [
+                      {
+                        type: "text",
+                        text: "若線上訂位，無法立即確認預約成功，建議於營業時間來電預約",
+                        size: "md",
+                        color: "#aaaaaa",
+                        wrap: true
+                      }
+                    ]
+                  },
+                  {
+                    type: "separator"
+                  }
+                ]
+              }
+            ]
+          },
+          footer: {
+            type: "box",
+            layout: "vertical",
+            spacing: "sm",
+            contents: [
+              {
+                type: "button",
+                style: "link",
+                height: "sm",
+                action: {
+                  type: "datetimepicker",
+                  label: "線上預約",
+                  data: "reserveTime",
+                  mode: "datetime",
+                  initial: "2022-06-14T00:00",
+                  min: "2022-06-14T00:00",
+                  max: "2023-06-14T00:00"
+                }
+              },
+              {
+                type: "button",
+                style: "link",
+                height: "sm",
+                action: {
+                  type: "message",
+                  label: "電話預約",
+                  text: "02 2511 5557"
+                }
+              },
+              {
+                type: "box",
+                layout: "vertical",
+                contents: [],
+                margin: "sm"
+              }
+            ],
+            flex: 0
+          }
+        }
+      }
+    )
+  }
 
 })
 // 程式碼寫在上方
