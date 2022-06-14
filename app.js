@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const app = express()
-const PORT = process.env.PORT || 3000 
+const PORT = process.env.PORT || 3000
 
 const bot = new linebot({
   channelId: process.env.CHANNEL_ID,
@@ -16,10 +16,29 @@ const bot = new linebot({
 const linebotParser = bot.parser()
 
 // 程式碼寫在下方
+bot.on('follow', async event => {
+  event.reply([
+    {
+      type: "text",
+      text: "感謝加入銀角酒場！\n\n此為開發測試用帳號\n有任何問題還請聯繫:\ntree12132002@hotmail.com"
+    },
+    {
+      type: "sticker",
+      packageId: "6136",
+      stickerId: "10551380"
+    }
+  ])
+    .then(date => {
+      // success
+    })
+    .catch(err => {
+      console.log(err)
+    })
+})
+
 bot.on('message', async event => {
-  if (event.message.type === 'text') {
-    event.reply(event.message.text)
-  }
+  const msg = event.message.text
+
 })
 // 程式碼寫在上方
 
