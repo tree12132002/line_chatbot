@@ -153,6 +153,424 @@ bot.on('message', async event => {
       }
     )
   }
+  if (msg === '外帶預約') {
+    event.reply(
+      {
+        type: "flex",
+        altText: "this is a flex message",
+        contents: 
+        {
+          "type": "carousel",
+          "contents": [
+            {
+              "type": "bubble",
+              "size": "kilo",
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://d1ralsognjng37.cloudfront.net/148b226b-10f4-4cb1-8b07-0b7d3c06a232.jpeg",
+                    "size": "full",
+                    "aspectMode": "cover",
+                    "aspectRatio": "2:3",
+                    "gravity": "top"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "原味章魚燒",
+                            "size": "xl",
+                            "color": "#ffffff",
+                            "weight": "bold"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "NT$ 130",
+                            "color": "#ebebeb",
+                            "size": "md",
+                            "flex": 0
+                          }
+                        ],
+                        "spacing": "lg"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "filler"
+                          },
+                          {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                              {
+                                "type": "filler"
+                              },
+                              {
+                                "type": "icon",
+                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
+                              },
+                              {
+                                "type": "text",
+                                "text": "Add to cart",
+                                "color": "#ffffff",
+                                "flex": 0,
+                                "offsetTop": "-2px"
+                              },
+                              {
+                                "type": "filler"
+                              }
+                            ],
+                            "spacing": "sm"
+                          },
+                          {
+                            "type": "filler"
+                          }
+                        ],
+                        "borderWidth": "1px",
+                        "cornerRadius": "4px",
+                        "spacing": "sm",
+                        "borderColor": "#ffffff",
+                        "margin": "xxl",
+                        "height": "40px"
+                      }
+                    ],
+                    "position": "absolute",
+                    "offsetBottom": "0px",
+                    "offsetStart": "0px",
+                    "offsetEnd": "0px",
+                    "backgroundColor": "#03303Acc",
+                    "paddingAll": "20px",
+                    "paddingTop": "18px"
+                  }
+                ],
+                "paddingAll": "0px"
+              }
+            },
+            {
+              "type": "bubble",
+              "size": "kilo",
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://d1ralsognjng37.cloudfront.net/d86aff84-d2f4-4bcb-9941-846a040ce3ea.jpeg",
+                    "size": "full",
+                    "aspectMode": "cover",
+                    "aspectRatio": "2:3",
+                    "gravity": "top"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "柚香蔥花章魚燒",
+                            "size": "xl",
+                            "color": "#ffffff",
+                            "weight": "bold"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "NT$ 150",
+                            "color": "#ebebeb",
+                            "size": "md",
+                            "flex": 0
+                          }
+                        ],
+                        "spacing": "lg"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "filler"
+                          },
+                          {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                              {
+                                "type": "filler"
+                              },
+                              {
+                                "type": "icon",
+                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
+                              },
+                              {
+                                "type": "text",
+                                "text": "Add to cart",
+                                "color": "#ffffff",
+                                "flex": 0,
+                                "offsetTop": "-2px"
+                              },
+                              {
+                                "type": "filler"
+                              }
+                            ],
+                            "spacing": "sm"
+                          },
+                          {
+                            "type": "filler"
+                          }
+                        ],
+                        "borderWidth": "1px",
+                        "cornerRadius": "4px",
+                        "spacing": "sm",
+                        "borderColor": "#ffffff",
+                        "margin": "xxl",
+                        "height": "40px"
+                      }
+                    ],
+                    "position": "absolute",
+                    "offsetBottom": "0px",
+                    "offsetStart": "0px",
+                    "offsetEnd": "0px",
+                    "backgroundColor": "#03303Acc",
+                    "paddingAll": "20px",
+                    "paddingTop": "18px"
+                  }
+                ],
+                "paddingAll": "0px"
+              }
+            },
+            {
+              "type": "bubble",
+              "size": "kilo",
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://d1ralsognjng37.cloudfront.net/3fdf4e94-a441-4da3-99fd-8657bc876de8.jpeg",
+                    "size": "full",
+                    "aspectMode": "cover",
+                    "aspectRatio": "2:3",
+                    "gravity": "top"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "雞蛋沙拉章魚燒",
+                            "size": "xl",
+                            "color": "#ffffff",
+                            "weight": "bold"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "NT$ 150",
+                            "color": "#ebebeb",
+                            "size": "md",
+                            "flex": 0
+                          }
+                        ],
+                        "spacing": "lg"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "filler"
+                          },
+                          {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                              {
+                                "type": "filler"
+                              },
+                              {
+                                "type": "icon",
+                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
+                              },
+                              {
+                                "type": "text",
+                                "text": "Add to cart",
+                                "color": "#ffffff",
+                                "flex": 0,
+                                "offsetTop": "-2px"
+                              },
+                              {
+                                "type": "filler"
+                              }
+                            ],
+                            "spacing": "sm"
+                          },
+                          {
+                            "type": "filler"
+                          }
+                        ],
+                        "borderWidth": "1px",
+                        "cornerRadius": "4px",
+                        "spacing": "sm",
+                        "borderColor": "#ffffff",
+                        "margin": "xxl",
+                        "height": "40px"
+                      }
+                    ],
+                    "position": "absolute",
+                    "offsetBottom": "0px",
+                    "offsetStart": "0px",
+                    "offsetEnd": "0px",
+                    "backgroundColor": "#03303Acc",
+                    "paddingAll": "20px",
+                    "paddingTop": "18px"
+                  }
+                ],
+                "paddingAll": "0px"
+              }
+            },
+            {
+              "type": "bubble",
+              "size": "kilo",
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://d1ralsognjng37.cloudfront.net/3512aa91-dc32-4565-975b-c6890e39d1e7.jpeg",
+                    "size": "full",
+                    "aspectMode": "cover",
+                    "aspectRatio": "2:3",
+                    "gravity": "top"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "起司明太子章魚燒",
+                            "size": "xl",
+                            "color": "#ffffff",
+                            "weight": "bold"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "NT$ 150",
+                            "color": "#ebebeb",
+                            "size": "md",
+                            "flex": 0
+                          }
+                        ],
+                        "spacing": "lg"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "filler"
+                          },
+                          {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                              {
+                                "type": "filler"
+                              },
+                              {
+                                "type": "icon",
+                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
+                              },
+                              {
+                                "type": "text",
+                                "text": "Add to cart",
+                                "color": "#ffffff",
+                                "flex": 0,
+                                "offsetTop": "-2px"
+                              },
+                              {
+                                "type": "filler"
+                              }
+                            ],
+                            "spacing": "sm"
+                          },
+                          {
+                            "type": "filler"
+                          }
+                        ],
+                        "borderWidth": "1px",
+                        "cornerRadius": "4px",
+                        "spacing": "sm",
+                        "borderColor": "#ffffff",
+                        "margin": "xxl",
+                        "height": "40px"
+                      }
+                    ],
+                    "position": "absolute",
+                    "offsetBottom": "0px",
+                    "offsetStart": "0px",
+                    "offsetEnd": "0px",
+                    "backgroundColor": "#03303Acc",
+                    "paddingAll": "20px",
+                    "paddingTop": "18px"
+                  }
+                ],
+                "paddingAll": "0px"
+              }
+            }
+          ]
+        }
+      }
+    )
+  }
 
 })
 // 程式碼寫在上方
