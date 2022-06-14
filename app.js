@@ -160,410 +160,410 @@ bot.on('message', async event => {
         altText: "this is a flex message",
         contents: 
         {
-          "type": "carousel",
-          "contents": [
+          type: "carousel",
+          contents: [
             {
-              "type": "bubble",
-              "size": "kilo",
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
+              type: "bubble",
+              size: "kilo",
+              body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
                   {
-                    "type": "image",
-                    "url": "https://d1ralsognjng37.cloudfront.net/148b226b-10f4-4cb1-8b07-0b7d3c06a232.jpeg",
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "2:3",
-                    "gravity": "top"
+                    type: "image",
+                    url: "https://d1ralsognjng37.cloudfront.net/148b226b-10f4-4cb1-8b07-0b7d3c06a232.jpeg",
+                    size: "full",
+                    aspectMode: "cover",
+                    aspectRatio: "2:3",
+                    gravity: "top"
                   },
                   {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
                       {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                           {
-                            "type": "text",
-                            "text": "原味章魚燒",
-                            "size": "xl",
-                            "color": "#ffffff",
-                            "weight": "bold"
+                            type: "text",
+                            text: "原味章魚燒",
+                            size: "xl",
+                            color: "#ffffff",
+                            weight: "bold"
                           }
                         ]
                       },
                       {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
+                        type: "box",
+                        layout: "baseline",
+                        contents: [
                           {
-                            "type": "text",
-                            "text": "NT$ 130",
-                            "color": "#ebebeb",
-                            "size": "md",
-                            "flex": 0
+                            type: "text",
+                            text: "NT$ 130",
+                            color: "#ebebeb",
+                            size: "md",
+                            flex: 0
                           }
                         ],
-                        "spacing": "lg"
+                        spacing: "lg"
                       },
                       {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                           {
-                            "type": "filler"
+                            type: "filler"
                           },
                           {
-                            "type": "box",
-                            "layout": "baseline",
-                            "contents": [
+                            type: "box",
+                            layout: "baseline",
+                            contents: [
                               {
-                                "type": "filler"
+                                type: "filler"
                               },
                               {
-                                "type": "icon",
-                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
+                                type: "icon",
+                                url: "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
                               },
                               {
-                                "type": "text",
-                                "text": "Add to cart",
-                                "color": "#ffffff",
-                                "flex": 0,
-                                "offsetTop": "-2px"
+                                type: "text",
+                                text: "Add to cart",
+                                color: "#ffffff",
+                                flex: 0,
+                                offsetTop: "-2px"
                               },
                               {
-                                "type": "filler"
+                                type: "filler"
                               }
                             ],
-                            "spacing": "sm"
+                            spacing: "sm"
                           },
                           {
-                            "type": "filler"
+                            type: "filler"
                           }
                         ],
-                        "borderWidth": "1px",
-                        "cornerRadius": "4px",
-                        "spacing": "sm",
-                        "borderColor": "#ffffff",
-                        "margin": "xxl",
-                        "height": "40px"
+                        borderWidth: "1px",
+                        cornerRadius: "4px",
+                        spacing: "sm",
+                        borderColor: "#ffffff",
+                        margin: "xxl",
+                        height: "40px"
                       }
                     ],
-                    "position": "absolute",
-                    "offsetBottom": "0px",
-                    "offsetStart": "0px",
-                    "offsetEnd": "0px",
-                    "backgroundColor": "#03303Acc",
-                    "paddingAll": "20px",
-                    "paddingTop": "18px"
+                    position: "absolute",
+                    offsetBottom: "0px",
+                    offsetStart: "0px",
+                    offsetEnd: "0px",
+                    backgroundColor: "#03303Acc",
+                    paddingAll: "20px",
+                    paddingTop: "18px"
                   }
                 ],
-                "paddingAll": "0px"
+                paddingAll: "0px"
               }
             },
             {
-              "type": "bubble",
-              "size": "kilo",
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
+              type: "bubble",
+              size: "kilo",
+              body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
                   {
-                    "type": "image",
-                    "url": "https://d1ralsognjng37.cloudfront.net/d86aff84-d2f4-4bcb-9941-846a040ce3ea.jpeg",
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "2:3",
-                    "gravity": "top"
+                    type: "image",
+                    url: "https://d1ralsognjng37.cloudfront.net/d86aff84-d2f4-4bcb-9941-846a040ce3ea.jpeg",
+                    size: "full",
+                    aspectMode: "cover",
+                    aspectRatio: "2:3",
+                    gravity: "top"
                   },
                   {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
                       {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                           {
-                            "type": "text",
-                            "text": "柚香蔥花章魚燒",
-                            "size": "xl",
-                            "color": "#ffffff",
-                            "weight": "bold"
+                            type: "text",
+                            text: "柚香蔥花章魚燒",
+                            size: "xl",
+                            color: "#ffffff",
+                            weight: "bold"
                           }
                         ]
                       },
                       {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
+                        type: "box",
+                        layout: "baseline",
+                        contents: [
                           {
-                            "type": "text",
-                            "text": "NT$ 150",
-                            "color": "#ebebeb",
-                            "size": "md",
-                            "flex": 0
+                            type: "text",
+                            text: "NT$ 150",
+                            color: "#ebebeb",
+                            size: "md",
+                            flex: 0
                           }
                         ],
-                        "spacing": "lg"
+                        spacing: "lg"
                       },
                       {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                           {
-                            "type": "filler"
+                            type: "filler"
                           },
                           {
-                            "type": "box",
-                            "layout": "baseline",
-                            "contents": [
+                            type: "box",
+                            layout: "baseline",
+                            contents: [
                               {
-                                "type": "filler"
+                                type: "filler"
                               },
                               {
-                                "type": "icon",
-                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
+                                type: "icon",
+                                url: "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
                               },
                               {
-                                "type": "text",
-                                "text": "Add to cart",
-                                "color": "#ffffff",
-                                "flex": 0,
-                                "offsetTop": "-2px"
+                                type: "text",
+                                text: "Add to cart",
+                                color: "#ffffff",
+                                flex: 0,
+                                offsetTop: "-2px"
                               },
                               {
-                                "type": "filler"
+                                type: "filler"
                               }
                             ],
-                            "spacing": "sm"
+                            spacing: "sm"
                           },
                           {
-                            "type": "filler"
+                            type: "filler"
                           }
                         ],
-                        "borderWidth": "1px",
-                        "cornerRadius": "4px",
-                        "spacing": "sm",
-                        "borderColor": "#ffffff",
-                        "margin": "xxl",
-                        "height": "40px"
+                        borderWidth: "1px",
+                        cornerRadius: "4px",
+                        spacing: "sm",
+                        borderColor: "#ffffff",
+                        margin: "xxl",
+                        height: "40px"
                       }
                     ],
-                    "position": "absolute",
-                    "offsetBottom": "0px",
-                    "offsetStart": "0px",
-                    "offsetEnd": "0px",
-                    "backgroundColor": "#03303Acc",
-                    "paddingAll": "20px",
-                    "paddingTop": "18px"
+                    position: "absolute",
+                    offsetBottom: "0px",
+                    offsetStart: "0px",
+                    offsetEnd: "0px",
+                    backgroundColor: "#03303Acc",
+                    paddingAll: "20px",
+                    paddingTop: "18px"
                   }
                 ],
-                "paddingAll": "0px"
+                paddingAll: "0px"
               }
             },
             {
-              "type": "bubble",
-              "size": "kilo",
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
+              type: "bubble",
+              size: "kilo",
+              body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
                   {
-                    "type": "image",
-                    "url": "https://d1ralsognjng37.cloudfront.net/3fdf4e94-a441-4da3-99fd-8657bc876de8.jpeg",
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "2:3",
-                    "gravity": "top"
+                    type: "image",
+                    url: "https://d1ralsognjng37.cloudfront.net/3fdf4e94-a441-4da3-99fd-8657bc876de8.jpeg",
+                    size: "full",
+                    aspectMode: "cover",
+                    aspectRatio: "2:3",
+                    gravity: "top"
                   },
                   {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
                       {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                           {
-                            "type": "text",
-                            "text": "雞蛋沙拉章魚燒",
-                            "size": "xl",
-                            "color": "#ffffff",
-                            "weight": "bold"
+                            type: "text",
+                            text: "雞蛋沙拉章魚燒",
+                            size: "xl",
+                            color: "#ffffff",
+                            weight: "bold"
                           }
                         ]
                       },
                       {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
+                        type: "box",
+                        layout: "baseline",
+                        contents: [
                           {
-                            "type": "text",
-                            "text": "NT$ 150",
-                            "color": "#ebebeb",
-                            "size": "md",
-                            "flex": 0
+                            type: "text",
+                            text: "NT$ 150",
+                            color: "#ebebeb",
+                            size: "md",
+                            flex: 0
                           }
                         ],
-                        "spacing": "lg"
+                        spacing: "lg"
                       },
                       {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                           {
-                            "type": "filler"
+                            type: "filler"
                           },
                           {
-                            "type": "box",
-                            "layout": "baseline",
-                            "contents": [
+                            type: "box",
+                            layout: "baseline",
+                            contents: [
                               {
-                                "type": "filler"
+                                type: "filler"
                               },
                               {
-                                "type": "icon",
-                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
+                                type: "icon",
+                                url: "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
                               },
                               {
-                                "type": "text",
-                                "text": "Add to cart",
-                                "color": "#ffffff",
-                                "flex": 0,
-                                "offsetTop": "-2px"
+                                type: "text",
+                                text: "Add to cart",
+                                color: "#ffffff",
+                                flex: 0,
+                                offsetTop: "-2px"
                               },
                               {
-                                "type": "filler"
+                                type: "filler"
                               }
                             ],
-                            "spacing": "sm"
+                            spacing: "sm"
                           },
                           {
-                            "type": "filler"
+                            type: "filler"
                           }
                         ],
-                        "borderWidth": "1px",
-                        "cornerRadius": "4px",
-                        "spacing": "sm",
-                        "borderColor": "#ffffff",
-                        "margin": "xxl",
-                        "height": "40px"
+                        borderWidth: "1px",
+                        cornerRadius: "4px",
+                        spacing: "sm",
+                        borderColor: "#ffffff",
+                        margin: "xxl",
+                        height: "40px"
                       }
                     ],
-                    "position": "absolute",
-                    "offsetBottom": "0px",
-                    "offsetStart": "0px",
-                    "offsetEnd": "0px",
-                    "backgroundColor": "#03303Acc",
-                    "paddingAll": "20px",
-                    "paddingTop": "18px"
+                    position: "absolute",
+                    offsetBottom: "0px",
+                    offsetStart: "0px",
+                    offsetEnd: "0px",
+                    backgroundColor: "#03303Acc",
+                    paddingAll: "20px",
+                    paddingTop: "18px"
                   }
                 ],
-                "paddingAll": "0px"
+                paddingAll: "0px"
               }
             },
             {
-              "type": "bubble",
-              "size": "kilo",
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
+              type: "bubble",
+              size: "kilo",
+              body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
                   {
-                    "type": "image",
-                    "url": "https://d1ralsognjng37.cloudfront.net/3512aa91-dc32-4565-975b-c6890e39d1e7.jpeg",
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "2:3",
-                    "gravity": "top"
+                    type: "image",
+                    url: "https://d1ralsognjng37.cloudfront.net/3512aa91-dc32-4565-975b-c6890e39d1e7.jpeg",
+                    size: "full",
+                    aspectMode: "cover",
+                    aspectRatio: "2:3",
+                    gravity: "top"
                   },
                   {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
                       {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                           {
-                            "type": "text",
-                            "text": "起司明太子章魚燒",
-                            "size": "xl",
-                            "color": "#ffffff",
-                            "weight": "bold"
+                            type: "text",
+                            text: "起司明太子章魚燒",
+                            size: "xl",
+                            color: "#ffffff",
+                            weight: "bold"
                           }
                         ]
                       },
                       {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
+                        type: "box",
+                        layout: "baseline",
+                        contents: [
                           {
-                            "type": "text",
-                            "text": "NT$ 150",
-                            "color": "#ebebeb",
-                            "size": "md",
-                            "flex": 0
+                            type: "text",
+                            text: "NT$ 150",
+                            color: "#ebebeb",
+                            size: "md",
+                            flex: 0
                           }
                         ],
-                        "spacing": "lg"
+                        spacing: "lg"
                       },
                       {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                           {
-                            "type": "filler"
+                            type: "filler"
                           },
                           {
-                            "type": "box",
-                            "layout": "baseline",
-                            "contents": [
+                            type: "box",
+                            layout: "baseline",
+                            contents: [
                               {
-                                "type": "filler"
+                                type: "filler"
                               },
                               {
-                                "type": "icon",
-                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
+                                type: "icon",
+                                url: "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip14.png"
                               },
                               {
-                                "type": "text",
-                                "text": "Add to cart",
-                                "color": "#ffffff",
-                                "flex": 0,
-                                "offsetTop": "-2px"
+                                type: "text",
+                                text: "Add to cart",
+                                color: "#ffffff",
+                                flex: 0,
+                                offsetTop: "-2px"
                               },
                               {
-                                "type": "filler"
+                                type: "filler"
                               }
                             ],
-                            "spacing": "sm"
+                            spacing: "sm"
                           },
                           {
-                            "type": "filler"
+                            type: "filler"
                           }
                         ],
-                        "borderWidth": "1px",
-                        "cornerRadius": "4px",
-                        "spacing": "sm",
-                        "borderColor": "#ffffff",
-                        "margin": "xxl",
-                        "height": "40px"
+                        borderWidth: "1px",
+                        cornerRadius: "4px",
+                        spacing: "sm",
+                        borderColor: "#ffffff",
+                        margin: "xxl",
+                        height: "40px"
                       }
                     ],
-                    "position": "absolute",
-                    "offsetBottom": "0px",
-                    "offsetStart": "0px",
-                    "offsetEnd": "0px",
-                    "backgroundColor": "#03303Acc",
-                    "paddingAll": "20px",
-                    "paddingTop": "18px"
+                    position: "absolute",
+                    offsetBottom: "0px",
+                    offsetStart: "0px",
+                    offsetEnd: "0px",
+                    backgroundColor: "#03303Acc",
+                    paddingAll: "20px",
+                    paddingTop: "18px"
                   }
                 ],
-                "paddingAll": "0px"
+                paddingAll: "0px"
               }
             }
           ]
@@ -574,145 +574,145 @@ bot.on('message', async event => {
   if (msg === '菜單') {
     event.reply(
       {
-        "type": "image",
-        "originalContentUrl": "https://pic.pimg.tw/pokerlife/1577256102-2369965690_wn.jpg",
-        "previewImageUrl": "https://pic.pimg.tw/pokerlife/1577256102-2369965690_wn.jpg"
+        type: "image",
+        originalContentUrl: "https://pic.pimg.tw/pokerlife/1577256102-2369965690_wn.jpg",
+        previewImageUrl: "https://pic.pimg.tw/pokerlife/1577256102-2369965690_wn.jpg"
       }
     )
   }
   if (msg === '營業時間') {
     event.reply(
       {
-        "type": "flex",
-        "altText": "this is a flex message",
-        "contents": 
+        type: "flex",
+        altText: "this is a flex message",
+        contents: 
         {
-          "type": "bubble",
-          "hero": {
-            "type": "image",
-            "url": "https://www.mirrormedia.com.tw/assets/images/20180920181807-41cd69807de8c229f0a61d81af48965f-tablet.jpg",
-            "size": "full",
-            "aspectRatio": "20:13",
-            "aspectMode": "cover"
+          type: "bubble",
+          hero: {
+            type: "image",
+            url: "https://www.mirrormedia.com.tw/assets/images/20180920181807-41cd69807de8c229f0a61d81af48965f-tablet.jpg",
+            size: "full",
+            aspectRatio: "20:13",
+            aspectMode: "cover"
           },
-          "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
+          body: {
+            type: "box",
+            layout: "vertical",
+            contents: [
               {
-                "type": "text",
-                "text": "銀角酒場",
-                "weight": "bold",
-                "size": "xl"
+                type: "text",
+                text: "銀角酒場",
+                weight: "bold",
+                size: "xl"
               },
               {
-                "type": "box",
-                "layout": "baseline",
-                "margin": "md",
-                "contents": [
+                type: "box",
+                layout: "baseline",
+                margin: "md",
+                contents: [
                   {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                    type: "icon",
+                    size: "sm",
+                    url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                   },
                   {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                    type: "icon",
+                    size: "sm",
+                    url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                   },
                   {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                    type: "icon",
+                    size: "sm",
+                    url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                   },
                   {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                    type: "icon",
+                    size: "sm",
+                    url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                   },
                   {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+                    type: "icon",
+                    size: "sm",
+                    url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
                   },
                   {
-                    "type": "text",
-                    "text": "4.0",
-                    "size": "sm",
-                    "color": "#999999",
-                    "margin": "md",
-                    "flex": 0
+                    type: "text",
+                    text: "4.0",
+                    size: "sm",
+                    color: "#999999",
+                    margin: "md",
+                    flex: 0
                   }
                 ]
               },
               {
-                "type": "box",
-                "layout": "vertical",
-                "margin": "lg",
-                "spacing": "sm",
-                "contents": [
+                type: "box",
+                layout: "vertical",
+                margin: "lg",
+                spacing: "sm",
+                contents: [
                   {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
+                    type: "box",
+                    layout: "baseline",
+                    spacing: "sm",
+                    contents: [
                       {
-                        "type": "text",
-                        "text": "Place",
-                        "color": "#aaaaaa",
-                        "size": "sm",
-                        "flex": 1
+                        type: "text",
+                        text: "Place",
+                        color: "#aaaaaa",
+                        size: "sm",
+                        flex: 1
                       },
                       {
-                        "type": "text",
-                        "text": "台北市中山區林森北路121之1號",
-                        "wrap": true,
-                        "color": "#666666",
-                        "size": "sm",
-                        "flex": 5
+                        type: "text",
+                        text: "台北市中山區林森北路121之1號",
+                        wrap: true,
+                        color: "#666666",
+                        size: "sm",
+                        flex: 5
                       }
                     ]
                   },
                   {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
+                    type: "box",
+                    layout: "baseline",
+                    spacing: "sm",
+                    contents: [
                       {
-                        "type": "text",
-                        "text": "Time",
-                        "color": "#aaaaaa",
-                        "size": "sm",
-                        "flex": 1
+                        type: "text",
+                        text: "Time",
+                        color: "#aaaaaa",
+                        size: "sm",
+                        flex: 1
                       },
                       {
-                        "type": "text",
-                        "text": "週一至週六 18:00 - 02:00\n週日 17:00 - 00:00",
-                        "wrap": true,
-                        "color": "#666666",
-                        "size": "sm",
-                        "flex": 5
+                        type: "text",
+                        text: "週一至週六 18:00 - 02:00\n週日 17:00 - 00:00",
+                        wrap: true,
+                        color: "#666666",
+                        size: "sm",
+                        flex: 5
                       }
                     ]
                   },
                   {
-                    "type": "box",
-                    "layout": "baseline",
-                    "contents": [
+                    type: "box",
+                    layout: "baseline",
+                    contents: [
                       {
-                        "type": "text",
-                        "text": "Phone",
-                        "color": "#aaaaaa",
-                        "size": "sm",
-                        "flex": 1
+                        type: "text",
+                        text: "Phone",
+                        color: "#aaaaaa",
+                        size: "sm",
+                        flex: 1
                       },
                       {
-                        "type": "text",
-                        "wrap": true,
-                        "color": "#666666",
-                        "size": "sm",
-                        "flex": 5,
-                        "text": "(02) 2511 5557"
+                        type: "text",
+                        wrap: true,
+                        color: "#666666",
+                        size: "sm",
+                        flex: 5,
+                        text: "(02) 2511 5557"
                       }
                     ]
                   }
@@ -720,29 +720,29 @@ bot.on('message', async event => {
               }
             ]
           },
-          "footer": {
-            "type": "box",
-            "layout": "vertical",
-            "spacing": "sm",
-            "contents": [
+          footer: {
+            type: "box",
+            layout: "vertical",
+            spacing: "sm",
+            contents: [
               {
-                "type": "button",
-                "style": "link",
-                "height": "sm",
-                "action": {
-                  "type": "uri",
-                  "label": "Google Map",
-                  "uri": "https://www.google.com/maps/place/%E9%8A%80%E8%A7%92%E9%85%92%E5%A0%B4/@25.0507481,121.5230219,17z/data=!3m1!4b1!4m5!3m4!1s0x3442a96f5a0c1b2f:0x6ec36376d91893e1!8m2!3d25.0507481!4d121.5252106"
+                type: "button",
+                style: "link",
+                height: "sm",
+                action: {
+                  type: "uri",
+                  label: "Google Map",
+                  uri: "https://www.google.com/maps/place/%E9%8A%80%E8%A7%92%E9%85%92%E5%A0%B4/@25.0507481,121.5230219,17z/data=!3m1!4b1!4m5!3m4!1s0x3442a96f5a0c1b2f:0x6ec36376d91893e1!8m2!3d25.0507481!4d121.5252106"
                 }
               },
               {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [],
-                "margin": "sm"
+                type: "box",
+                layout: "vertical",
+                contents: [],
+                margin: "sm"
               }
             ],
-            "flex": 0
+            flex: 0
           }
         }
       }
