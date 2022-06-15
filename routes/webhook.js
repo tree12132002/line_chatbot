@@ -585,6 +585,169 @@ bot.on('message', async event => {
                 ],
                 paddingAll: '0px'
               }
+            },
+            {
+              type: 'bubble',
+              size: 'kilo',
+              body: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '線上訂餐功能',
+                    size: 'xl'
+                  },
+                  {
+                    type: 'separator'
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'box',
+                            layout: 'baseline',
+                            contents: [
+                              {
+                                type: 'filler'
+                              },
+                              {
+                                type: 'text',
+                                text: '購物車查詢',
+                                flex: 0,
+                                offsetTop: '-2px'
+                              },
+                              {
+                                type: 'filler'
+                              }
+                            ],
+                            spacing: 'sm',
+                            action: {
+                              type: 'message',
+                              text: '購物車查詢'
+                            }
+                          },
+                          {
+                            type: 'filler'
+                          }
+                        ],
+                        borderWidth: '1px',
+                        cornerRadius: '4px',
+                        spacing: 'sm',
+                        borderColor: '#aaaaaa',
+                        margin: 'xxl',
+                        height: '40px'
+                      }
+                    ]
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'box',
+                            layout: 'baseline',
+                            contents: [
+                              {
+                                type: 'filler'
+                              },
+                              {
+                                type: 'text',
+                                text: '清空購物車',
+                                flex: 0,
+                                offsetTop: '-2px'
+                              },
+                              {
+                                type: 'filler'
+                              }
+                            ],
+                            spacing: 'sm',
+                            action: {
+                              type: 'message',
+                              text: '清空購物車'
+                            }
+                          },
+                          {
+                            type: 'filler'
+                          }
+                        ],
+                        borderWidth: '1px',
+                        cornerRadius: '4px',
+                        spacing: 'sm',
+                        borderColor: '#aaaaaa',
+                        margin: 'xxl',
+                        height: '40px'
+                      }
+                    ]
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    contents: [
+                      {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [
+                          {
+                            type: 'filler'
+                          },
+                          {
+                            type: 'box',
+                            layout: 'baseline',
+                            contents: [
+                              {
+                                type: 'filler'
+                              },
+                              {
+                                type: 'text',
+                                text: '訂單查詢',
+                                flex: 0,
+                                offsetTop: '-2px',
+                                action: {
+                                  type: 'message',
+                                  text: '訂單查詢'
+                                }
+                              },
+                              {
+                                type: 'filler'
+                              }
+                            ],
+                            spacing: 'sm',
+                            action: {
+                              type: 'message',
+                              text: '購物車查詢'
+                            }
+                          },
+                          {
+                            type: 'filler'
+                          }
+                        ],
+                        borderWidth: '1px',
+                        cornerRadius: '4px',
+                        spacing: 'sm',
+                        borderColor: '#aaaaaa',
+                        margin: 'xxl',
+                        height: '40px'
+                      }
+                    ]
+                  }
+                ]
+              }
             }
           ]
         }
@@ -768,9 +931,51 @@ bot.on('message', async event => {
       }
     )
   }
+  if (msg === '購物車查詢') {
+    const userId = event.source.uerId
+
+    Cart.findAll({
+      where: userId === userId,
+      raw: true,
+      nest: true
+    })
+      .then(carts => {
+        const orderItems = []
+        let quantityAmount = 0
+        let priceAmount = 0
+
+        carts.forEach(cart => {
+          orderItems.push(`${cart.item} ${cart.quantity}份 ${cart.price}元`)
+          quantityAmount += cart.quantity
+          priceAmount += cart.price
+        })
+        const cartItem = orderItems.join('\n')
+        event.reply(
+          {
+            type: 'template',
+            altText: 'this is a confirm template',
+            template: {
+              type: 'confirm',
+              actions: [
+                {
+                  type: 'postback',
+                  label: '重新下單',
+                  data: 'type=reorder'
+                },
+                {
+                  type: 'postback',
+                  label: '確認結帳',
+                  data: 'type=chekout'
+                }
+              ],
+              text: `購物車內容：\n\n${cartItem}\n\n總共 ${quantityAmount}份 ${priceAmount}元`
+            }
+          }
+        )
+      })
+  }
 })
 bot.on('postback', event => {
-  // console.log(event)
   const postback = event.postback.data.split('&')
   const userId = event.source.userId
 
