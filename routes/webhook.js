@@ -668,7 +668,7 @@ bot.on('message', async event => {
                               },
                               {
                                 type: 'text',
-                                text: '清空購物車',
+                                text: '訂單查詢',
                                 flex: 0,
                                 offsetTop: '-2px'
                               },
@@ -679,7 +679,7 @@ bot.on('message', async event => {
                             spacing: 'sm',
                             action: {
                               type: 'message',
-                              text: '清空購物車'
+                              text: '訂單查詢'
                             }
                           },
                           {
@@ -715,13 +715,9 @@ bot.on('message', async event => {
                               },
                               {
                                 type: 'text',
-                                text: '訂單查詢',
+                                text: '來電訂購',
                                 flex: 0,
-                                offsetTop: '-2px',
-                                action: {
-                                  type: 'message',
-                                  text: '訂單查詢'
-                                }
+                                offsetTop: '-2px'
                               },
                               {
                                 type: 'filler'
@@ -730,7 +726,7 @@ bot.on('message', async event => {
                             spacing: 'sm',
                             action: {
                               type: 'message',
-                              text: '購物車查詢'
+                              text: '02 2511 5557'
                             }
                           },
                           {
@@ -993,11 +989,12 @@ bot.on('postback', event => {
               quantity: 1,
               price: 130
             })
+          } else {
+            cart.update({
+              quantity: cart.quantity + 1,
+              price: cart.price + 130
+            })
           }
-          return cart.update({
-            quantity: cart.quantity + 1,
-            price: cart.price + 130
-          })
         })
     }
     if (postback[1] === 'item=柚香蔥花章魚燒') {
@@ -1013,11 +1010,12 @@ bot.on('postback', event => {
               quantity: 1,
               price: 150
             })
+          } else {
+            cart.update({
+              quantity: cart.quantity + 1,
+              price: cart.price + 150
+            })
           }
-          return cart.update({
-            quantity: cart.quantity + 1,
-            price: cart.price + 150
-          })
         })
     }
     if (postback[1] === 'item=雞蛋沙拉章魚燒') {
@@ -1033,11 +1031,12 @@ bot.on('postback', event => {
               quantity: 1,
               price: 150
             })
+          } else {
+            cart.update({
+              quantity: cart.quantity + 1,
+              price: cart.price + 150
+            })
           }
-          return cart.update({
-            quantity: cart.quantity + 1,
-            price: cart.price + 150
-          })
         })
     }
     if (postback[1] === 'item=起司明太子章魚燒') {
@@ -1053,13 +1052,21 @@ bot.on('postback', event => {
               quantity: 1,
               price: 150
             })
+          } else {
+            cart.update({
+              quantity: cart.quantity + 1,
+              price: cart.price + 150
+            })
           }
-          return cart.update({
-            quantity: cart.quantity + 1,
-            price: cart.price + 150
-          })
         })
     }
+  }
+  if (postback[0] === 'type=reorder') {
+    event.reply('已清空購物車，歡迎您再次訂購')
+    Cart.destroy({
+      where: userId === userId,
+      truncate: true
+    })
   }
 })
 
