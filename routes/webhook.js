@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const { Cart } = require('../models')
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -236,7 +237,12 @@ bot.on('message', async event => {
                                 type: 'filler'
                               }
                             ],
-                            spacing: 'sm'
+                            spacing: 'sm',
+                            action: {
+                              type: 'postback',
+                              label: 'Add to cart',
+                              data: 'type=order&item=原味章魚燒&quantity=1&price=130'
+                            }
                           },
                           {
                             type: 'filler'
@@ -337,7 +343,12 @@ bot.on('message', async event => {
                                 type: 'filler'
                               }
                             ],
-                            spacing: 'sm'
+                            spacing: 'sm',
+                            action: {
+                              type: 'postback',
+                              label: 'Add to cart',
+                              data: 'type=order&item=柚香蔥花章魚燒&quantity=1&price=150'
+                            }
                           },
                           {
                             type: 'filler'
@@ -438,7 +449,12 @@ bot.on('message', async event => {
                                 type: 'filler'
                               }
                             ],
-                            spacing: 'sm'
+                            spacing: 'sm',
+                            action: {
+                              type: 'postback',
+                              label: 'Add to cart',
+                              data: 'type=order&item=雞蛋沙拉章魚燒&quantity=1&price=150'
+                            }
                           },
                           {
                             type: 'filler'
@@ -539,7 +555,12 @@ bot.on('message', async event => {
                                 type: 'filler'
                               }
                             ],
-                            spacing: 'sm'
+                            spacing: 'sm',
+                            action: {
+                              type: 'postback',
+                              label: 'Add to cart',
+                              data: 'type=order&item=起司明太子章魚燒&quantity=1&price=150'
+                            }
                           },
                           {
                             type: 'filler'
@@ -746,6 +767,94 @@ bot.on('message', async event => {
         }
       }
     )
+  }
+})
+bot.on('postback', event => {
+  // console.log(event)
+  const postback = event.postback.data.split('&')
+  const userId = event.source.userId
+
+  if (postback[0] === 'type=order') {
+    if (postback[1] === 'item=原味章魚燒') {
+      event.reply('原味章魚燒加入購物車')
+      Cart.findOne({
+        where: { item: '原味章魚燒' }
+      })
+        .then(cart => {
+          if (!cart) {
+            Cart.create({
+              userId,
+              item: '原味章魚燒',
+              quantity: 1,
+              price: 130
+            })
+          }
+          return cart.update({
+            quantity: cart.quantity + 1,
+            price: cart.price + 130
+          })
+        })
+    }
+    if (postback[1] === 'item=柚香蔥花章魚燒') {
+      event.reply('柚香蔥花章魚燒加入購物車')
+      Cart.findOne({
+        where: { item: '柚香蔥花章魚燒' }
+      })
+        .then(cart => {
+          if (!cart) {
+            Cart.create({
+              userId,
+              item: '柚香蔥花章魚燒',
+              quantity: 1,
+              price: 150
+            })
+          }
+          return cart.update({
+            quantity: cart.quantity + 1,
+            price: cart.price + 150
+          })
+        })
+    }
+    if (postback[1] === 'item=雞蛋沙拉章魚燒') {
+      event.reply('雞蛋沙拉章魚燒加入購物車')
+      Cart.findOne({
+        where: { item: '雞蛋沙拉章魚燒' }
+      })
+        .then(cart => {
+          if (!cart) {
+            Cart.create({
+              userId,
+              item: '雞蛋沙拉章魚燒',
+              quantity: 1,
+              price: 150
+            })
+          }
+          return cart.update({
+            quantity: cart.quantity + 1,
+            price: cart.price + 150
+          })
+        })
+    }
+    if (postback[1] === 'item=起司明太子章魚燒') {
+      event.reply('起司明太子章魚燒加入購物車')
+      Cart.findOne({
+        where: { item: '起司明太子章魚燒' }
+      })
+        .then(cart => {
+          if (!cart) {
+            Cart.create({
+              userId,
+              item: '起司明太子章魚燒',
+              quantity: 1,
+              price: 150
+            })
+          }
+          return cart.update({
+            quantity: cart.quantity + 1,
+            price: cart.price + 150
+          })
+        })
+    }
   }
 })
 
