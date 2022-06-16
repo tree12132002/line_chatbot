@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { Cart } = require('../models')
+const { Cart, Orderlist } = require('../models')
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -97,7 +97,7 @@ bot.on('message', async event => {
                     contents: [
                       {
                         type: 'text',
-                        text: '若線上訂位，無法立即確認預約成功，建議於營業時間來電預約',
+                        text: '由於沒有用餐時間限制，僅限來電預定，若造成不便敬請見諒',
                         size: 'md',
                         color: '#aaaaaa',
                         wrap: true
@@ -116,20 +116,6 @@ bot.on('message', async event => {
             layout: 'vertical',
             spacing: 'sm',
             contents: [
-              {
-                type: 'button',
-                style: 'link',
-                height: 'sm',
-                action: {
-                  type: 'datetimepicker',
-                  label: '線上預約',
-                  data: 'reserveTime',
-                  mode: 'datetime',
-                  initial: '2022-06-14T00:00',
-                  min: '2022-06-14T00:00',
-                  max: '2023-06-14T00:00'
-                }
-              },
               {
                 type: 'button',
                 style: 'link',
@@ -960,8 +946,8 @@ bot.on('message', async event => {
                 },
                 {
                   type: 'postback',
-                  label: '確認結帳',
-                  data: 'type=chekout'
+                  label: '確認下單',
+                  data: 'type=checkout'
                 }
               ],
               text: `購物車內容：\n\n${cartItem}\n\n總共 ${quantityAmount}份 ${priceAmount}元`
@@ -1067,6 +1053,196 @@ bot.on('postback', event => {
       where: userId === userId,
       truncate: true
     })
+  }
+  if (postback[0] === 'type=checkout') {
+    Cart.findAll({
+      where: userId === userId,
+      raw: true,
+      nest: true
+    })
+      .then(carts => {
+        const orderItems = []
+        const orderQuantity = []
+        const orderPrice = []
+        let priceAmount = 0
+        let quantityAmount = 0
+
+        carts.forEach(cart => {
+          orderItems.push(cart.item)
+          orderQuantity.push(cart.quantity)
+          orderPrice.push(cart.price)
+          quantityAmount += cart.quantity
+          priceAmount += cart.price
+        })
+        const item = orderItems.join('\n')
+        const quantity = orderQuantity.join('\n')
+        const price = orderPrice.join('\n')
+
+        event.reply(
+          {
+            type: 'flex',
+            altText: 'this is a flex message',
+            contents:
+            {
+              type: 'bubble',
+              body: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '訂餐明細',
+                    weight: 'bold',
+                    color: '#1DB446',
+                    size: 'sm'
+                  },
+                  {
+                    type: 'text',
+                    text: '銀角酒場',
+                    weight: 'bold',
+                    size: 'xxl',
+                    margin: 'md'
+                  },
+                  {
+                    type: 'text',
+                    text: '台北市中山區林森北路121-1號',
+                    size: 'xs',
+                    color: '#aaaaaa',
+                    wrap: true
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl'
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    margin: 'xxl',
+                    spacing: 'sm',
+                    contents: [
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: `${item}`,
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0,
+                            wrap: true
+                          },
+                          {
+                            type: 'text',
+                            text: `${quantity}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end',
+                            wrap: true
+                          },
+                          {
+                            type: 'text',
+                            text: `${price}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end',
+                            wrap: true
+                          }
+                        ]
+                      },
+                      {
+                        type: 'separator',
+                        margin: 'xxl'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        margin: 'xxl',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '數量',
+                            size: 'sm',
+                            color: '#555555'
+                          },
+                          {
+                            type: 'text',
+                            text: `${quantityAmount}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '總金額',
+                            size: 'sm',
+                            color: '#555555'
+                          },
+                          {
+                            type: 'text',
+                            text: `${priceAmount}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end',
+                            action: {
+                              type: 'postback',
+                              label: 'action',
+                              data: 'hello',
+                              displayText: '訂單查詢'
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl'
+                  },
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    margin: 'md',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: '感謝您的訂購！\n製餐時間約略20分鐘，請您稍待片刻',
+                        size: 'xs',
+                        color: '#aaaaaa',
+                        flex: 0,
+                        wrap: true
+                      }
+                    ]
+                  }
+                ]
+              },
+              styles: {
+                footer: {
+                  separator: true
+                }
+              }
+            }
+          }
+        )
+        Promise.all([
+          Orderlist.create({
+            userId: carts[0].userId,
+            item,
+            quantity,
+            price
+          }),
+          Cart.destroy({
+            where: userId === userId,
+            truncate: true
+          })
+        ])
+      })
   }
 })
 
