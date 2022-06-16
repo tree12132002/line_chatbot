@@ -1251,6 +1251,14 @@ bot.on('postback', event => {
       nest: true
     })
       .then(carts => {
+        if (!carts.length) {
+          return event.reply(
+            {
+              type: 'text',
+              text: '購物車還是空的，歡迎訂購餐點喔！'
+            }
+          )
+        }
         const orderItems = []
         const orderQuantity = []
         const orderPrice = []
