@@ -38,6 +38,7 @@ bot.on('follow', async event => {
 })
 bot.on('message', async event => {
   const msg = event.message.text
+  const userId = event.source.uerId
 
   if (msg === '最新消息') {
     event.reply(
@@ -914,14 +915,20 @@ bot.on('message', async event => {
     )
   }
   if (msg === '購物車查詢') {
-    const userId = event.source.uerId
-
     Cart.findAll({
       where: userId === userId,
       raw: true,
       nest: true
     })
       .then(carts => {
+        if (!carts.length) {
+          return event.reply(
+            {
+              type: 'text',
+              text: '購物車是空的，想點些什麼呢？'
+            }
+          )
+        }
         const orderItems = []
         let quantityAmount = 0
         let priceAmount = 0
@@ -951,6 +958,189 @@ bot.on('message', async event => {
                 }
               ],
               text: `購物車內容：\n\n${cartItem}\n\n總共 ${quantityAmount}份 ${priceAmount}元`
+            }
+          }
+        )
+      })
+  }
+  if (msg === '訂單查詢') {
+    Orderlist.findAll({
+      where: userId === userId,
+      order: [['createdAt', 'DESC']],
+      limit: 1,
+      raw: true,
+      nest: true
+    })
+      .then(orderlist => {
+        if (!orderlist.length) {
+          return event.reply(
+            {
+              type: 'text',
+              text: '目前沒有訂單記錄'
+            }
+          )
+        }
+        let quantityAmount = 0
+        let priceAmount = 0
+        const quantityArr = orderlist[0].quantity.split('\n')
+        const priceArr = orderlist[0].price.split('\n')
+        const time = `${orderlist[0].createdAt.toISOString().split('T')[0]} ${orderlist[0].createdAt.toISOString().split('T')[1].substr(0, 5)}`
+
+        quantityArr.forEach(item => {
+          quantityAmount += Number(item)
+        })
+        priceArr.forEach(item => {
+          priceAmount += Number(item)
+        })
+        event.reply(
+          {
+            type: 'flex',
+            altText: 'this is a flex message',
+            contents:
+            {
+              type: 'bubble',
+              body: {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '訂餐明細',
+                    weight: 'bold',
+                    color: '#1DB446',
+                    size: 'sm'
+                  },
+                  {
+                    type: 'text',
+                    text: '銀角酒場',
+                    weight: 'bold',
+                    size: 'xxl',
+                    margin: 'md'
+                  },
+                  {
+                    type: 'text',
+                    text: '台北市中山區林森北路121-1號',
+                    size: 'xs',
+                    color: '#aaaaaa',
+                    wrap: true
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl'
+                  },
+                  {
+                    type: 'box',
+                    layout: 'vertical',
+                    margin: 'xxl',
+                    spacing: 'sm',
+                    contents: [
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: `${orderlist[0].item}`,
+                            size: 'sm',
+                            color: '#555555',
+                            flex: 0,
+                            wrap: true
+                          },
+                          {
+                            type: 'text',
+                            text: `${orderlist[0].quantity}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end',
+                            wrap: true
+                          },
+                          {
+                            type: 'text',
+                            text: `${orderlist[0].price}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end',
+                            wrap: true
+                          }
+                        ]
+                      },
+                      {
+                        type: 'separator',
+                        margin: 'xxl'
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        margin: 'xxl',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '數量',
+                            size: 'sm',
+                            color: '#555555'
+                          },
+                          {
+                            type: 'text',
+                            text: `${quantityAmount}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end'
+                          }
+                        ]
+                      },
+                      {
+                        type: 'box',
+                        layout: 'horizontal',
+                        contents: [
+                          {
+                            type: 'text',
+                            text: '總金額',
+                            size: 'sm',
+                            color: '#555555'
+                          },
+                          {
+                            type: 'text',
+                            text: `${priceAmount}`,
+                            size: 'sm',
+                            color: '#111111',
+                            align: 'end',
+                            action: {
+                              type: 'postback',
+                              label: 'action',
+                              data: 'hello',
+                              displayText: '訂單查詢'
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    type: 'separator',
+                    margin: 'xxl'
+                  },
+                  {
+                    type: 'box',
+                    layout: 'horizontal',
+                    margin: 'md',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: `訂單時間：${time}`,
+                        size: 'xs',
+                        color: '#aaaaaa',
+                        flex: 0,
+                        wrap: true
+                      }
+                    ]
+                  }
+                ]
+              },
+              styles: {
+                footer: {
+                  separator: true
+                }
+              }
             }
           }
         )
